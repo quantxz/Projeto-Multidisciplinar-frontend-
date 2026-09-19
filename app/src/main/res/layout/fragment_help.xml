@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F3EC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Central de Ajuda"
+            android:textColor="#222222"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Encontre respostas para as principais dúvidas sobre o ReMatch."
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <!-- COMO FUNCIONA -->
+
+        <TextView
+            android:id="@+id/perguntaComoFunciona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="♻️  Como funciona o ReMatch?   ›"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaComoFunciona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="O ReMatch conecta pessoas interessadas em anunciar, encontrar e trocar materiais, facilitando o reaproveitamento e incentivando práticas mais sustentáveis."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- PUBLICAR -->
+
+        <TextView
+            android:id="@+id/perguntaPublicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="📦  Como publicar um material?   ›"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaPublicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="Acesse a opção de publicar material, preencha as informações solicitadas, adicione as fotos e finalize a publicação."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- MATCHES -->
+
+        <TextView
+            android:id="@+id/perguntaMatches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="🤝  Como funcionam os matches?   ›"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaMatches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="Os matches ajudam a conectar usuários interessados nos materiais disponíveis no ReMatch."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- MENSAGENS -->
+
+        <TextView
+            android:id="@+id/perguntaMensagens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="💬  Como conversar com outro usuário?   ›"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaMensagens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="Utilize a área de mensagens do ReMatch para acessar suas conversas e enviar mensagens a outros usuários."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- CONTA -->
+
+        <TextView
+            android:id="@+id/perguntaConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="👤  Estou com problemas na minha conta   ›"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="Confira seus dados de acesso e as informações cadastradas no perfil. Caso o problema continue, utilize a opção de reportar um problema."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- REPORTAR PROBLEMA -->
+
+        <TextView
+            android:id="@+id/perguntaProblema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="30dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="18dp"
+            android:text="⚠️  Reportar um problema   ›"
+            android:textColor="#B3261E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respostaProblema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="#F8FAF8"
+            android:padding="18dp"
+            android:text="Se encontrar algum erro ou comportamento inesperado no ReMatch, descreva o problema com o máximo de detalhes possível para facilitar a identificação e correção."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

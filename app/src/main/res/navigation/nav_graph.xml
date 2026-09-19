@@ -7,6 +7,32 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/FirstFragment">
 
+    <!-- CHAT -->
+    <fragment
+        android:id="@+id/ChatFragment"
+        android:name="com.example.projeto.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+
+        <argument
+            android:name="nomeUsuario"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MessagesFragment"
+        android:name="com.example.projeto.MessagesFragment"
+        android:label="Mensagens"
+        tools:layout="@layout/fragment_messages">
+
+        <action
+            android:id="@+id/action_MessagesFragment_to_ChatFragment"
+            app:destination="@id/ChatFragment" />
+
+    </fragment>
+
 
     <!-- ========================= -->
     <!-- LOGIN -->
@@ -218,7 +244,70 @@
             android:id="@+id/action_NinthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
 
+        <!-- Configurações → Notificações -->
+        <action
+            android:id="@+id/action_NinthFragment_to_NotificationsFragment"
+            app:destination="@id/NotificationsFragment" />
+
+        <!-- Configurações → Privacidade -->
+        <action
+            android:id="@+id/action_NinthFragment_to_PrivacyFragment"
+            app:destination="@id/PrivacyFragment" />
+
+        <!-- Configurações → Ajuda -->
+        <!-- Configurações → Ajuda -->
+        <action
+            android:id="@+id/action_NinthFragment_to_HelpFragment"
+            app:destination="@id/HelpFragment" />
+
+        <!-- Configurações → Termos de uso -->
+        <action
+            android:id="@+id/action_NinthFragment_to_TermsFragment"
+            app:destination="@id/TermsFragment" />
+
     </fragment>
+        <!-- ========================= -->
+        <!-- NOTIFICAÇÕES -->
+        <!-- ========================= -->
+
+
+    <fragment
+        android:id="@+id/NotificationsFragment"
+        android:name="com.example.projeto.NotificationsFragment"
+        android:label="Notificações"
+        tools:layout="@layout/fragment_notifications" />
+
+
+    <!-- ========================= -->
+    <!-- PRIVACIDADE -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/PrivacyFragment"
+        android:name="com.example.projeto.PrivacyFragment"
+        android:label="Privacidade"
+        tools:layout="@layout/fragment_privacy" />
+
+    <!-- ========================= -->
+    <!-- AJUDA -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/HelpFragment"
+        android:name="com.example.projeto.HelpFragment"
+        android:label="Ajuda"
+        tools:layout="@layout/fragment_help" />
+
+
+    <!-- ========================= -->
+    <!-- TERMOS DE USO -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/TermsFragment"
+        android:name="com.example.projeto.TermsFragment"
+        android:label="Termos de uso"
+        tools:layout="@layout/fragment_terms" />
 
 
     <!-- ========================= -->

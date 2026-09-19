@@ -36,35 +36,27 @@ class NinthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnNotificacoes.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Notificações em breve",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(
+                R.id.action_NinthFragment_to_NotificationsFragment
+            )
         }
 
         binding.btnPrivacidade.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Privacidade em breve",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(
+                R.id.action_NinthFragment_to_PrivacyFragment
+            )
         }
 
         binding.btnAjuda.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Central de ajuda em breve",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(
+                R.id.action_NinthFragment_to_HelpFragment
+            )
         }
 
         binding.btnTermos.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Termos de uso em breve",
-                Toast.LENGTH_SHORT
-            ).show()
+            findNavController().navigate(
+                R.id.action_NinthFragment_to_TermsFragment
+            )
         }
 
         // Voltar para o Perfil

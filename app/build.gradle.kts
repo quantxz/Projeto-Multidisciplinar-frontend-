@@ -43,6 +43,9 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.material)
+
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+
     implementation("androidx.datastore:datastore-preferences:1.1.7")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
