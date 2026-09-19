@@ -1,4 +1,4 @@
-package com.example.projeto
+package com.example.projeto.User
 
 import android.net.Uri
 import android.os.Bundle
@@ -13,13 +13,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.MediaType.Companion.toMediaType
-import retrofit2.Response
-import com.bumptech.glide.Glide
 
 class TenthFragment : Fragment() {
 
@@ -171,12 +171,6 @@ class TenthFragment : Fragment() {
                         edtLocalizacao.setText(user.locale ?: "")
                         edtDescricao.setText(user.bio ?: "")
 
-                        Toast.makeText(
-                            requireContext(),
-                            "Foto: ${user.photoUrl}",
-                            Toast.LENGTH_LONG
-                        ).show()
-
                         if (!user.photoUrl.isNullOrBlank()) {
 
                             val photoUrl =
@@ -282,12 +276,6 @@ class TenthFragment : Fragment() {
                     )
 
                 if (response.isSuccessful) {
-
-                    Toast.makeText(
-                        requireContext(),
-                        "Perfil atualizado!",
-                        Toast.LENGTH_SHORT
-                    ).show()
 
                     findNavController().navigate(
                         R.id.action_TenthFragment_to_ThirdFragment

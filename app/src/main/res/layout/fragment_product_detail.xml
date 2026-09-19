@@ -4,138 +4,156 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F2">
+    android:background="#F5F7F2"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingStart="24dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="32dp">
 
         <!-- VOLTAR -->
 
         <Button
             android:id="@+id/btnVoltar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="← Voltar"
-            android:textSize="14sp" />
+            android:layout_height="45dp"
+            android:backgroundTint="#E2E9E3"
+            android:text="←  Voltar"
+            android:textAllCaps="false"
+            android:textColor="#496050"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        <!-- FOTO -->
+        <!-- FOTO DO PRODUTO -->
 
         <ImageView
             android:id="@+id/imgProduto"
             android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_card"
+            android:clipToOutline="true"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background" />
 
-        <!-- TÍTULO -->
+        <!-- CARD PRINCIPAL -->
 
-        <TextView
-            android:id="@+id/tvTitulo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Nome do produto"
-            android:textColor="#222222"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_card"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <!-- LOCALIZAÇÃO -->
+            <!-- TÍTULO -->
 
-        <TextView
-            android:id="@+id/tvLocalizacao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="📍 Localização"
-            android:textColor="#666666"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome do produto"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <!-- DIVISÓRIA -->
+            <!-- LOCALIZAÇÃO -->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:background="#D0D8D0" />
+            <TextView
+                android:id="@+id/tvLocalizacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="📍 Localização"
+                android:textColor="#718078"
+                android:textSize="15sp" />
 
-        <!-- INFORMAÇÕES -->
+            <!-- DIVISÓRIA -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Informações do produto"
-            android:textColor="#2E7D32"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#E0E6E1" />
 
-        <!-- CATEGORIA -->
+            <!-- INFORMAÇÕES -->
 
-        <TextView
-            android:id="@+id/tvCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="🏷️ Categoria: Eletrônicos"
-            android:textColor="#444444"
-            android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Informações do produto"
+                android:textColor="#245B32"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
-        <!-- ESTADO -->
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="🏷️  Categoria: Eletrônicos"
+                android:textColor="#59635D"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/tvEstado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="📦 Estado: Usado"
-            android:textColor="#444444"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="📦  Estado: Usado"
+                android:textColor="#59635D"
+                android:textSize="15sp" />
 
-        <!-- QUANTIDADE -->
+            <TextView
+                android:id="@+id/tvQuantidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="🔢  Quantidade: 1"
+                android:textColor="#59635D"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/tvQuantidade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="🔢 Quantidade: 1"
-            android:textColor="#444444"
-            android:textSize="16sp" />
+            <!-- DESCRIÇÃO -->
 
-        <!-- DESCRIÇÃO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Descrição"
+                android:textColor="#245B32"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Descrição"
-            android:textColor="#2E7D32"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Descrição do produto..."
+                android:textColor="#59635D"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/tvDescricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Descrição do produto..."
-            android:textColor="#444444"
-            android:textSize="16sp"
-            android:lineSpacingExtra="4dp" />
+        </LinearLayout>
 
-        <!-- BOTÃO -->
+        <!-- INTERESSE -->
 
         <Button
             android:id="@+id/btnTenhoInteresse"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="20dp"
-            android:text="TENHO INTERESSE ♻️"
+            android:layout_height="58dp"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="#2E7D32"
+            android:text="Tenho interesse  ♻"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:textStyle="bold" />
 

@@ -1,5 +1,10 @@
 package com.example.projeto.api
 
+import com.example.projeto.data.Conversation
+import com.example.projeto.data.ConversationDto
+import com.example.projeto.data.CreateConversationRequest
+import com.example.projeto.data.FileUploadResponse
+import com.example.projeto.data.LastMessageDto
 import com.example.projeto.data.Product
 import com.example.projeto.data.User
 import com.example.projeto.model.AuthResponse
@@ -13,9 +18,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import retrofit2.Call
 import retrofit2.http.Multipart
 import retrofit2.http.PATCH
 import retrofit2.http.Part
+import retrofit2.http.Path
 
 interface ApiService {
     // =====================GETTERS
@@ -27,6 +34,14 @@ interface ApiService {
 
     @GET("users/profile")
     suspend fun getProfile(): Response<User>
+
+    @GET("users/conversations")
+    fun getConversations(): Call<List<ConversationDto>>
+
+    @GET("conversation/{conversationId}/messages")
+    fun getMessages(
+        @Path("conversationId") conversationId: String
+    ): Call<List<LastMessageDto>>
 
     // =====================POSTS
     @POST("users/register")
@@ -50,6 +65,18 @@ interface ApiService {
         @Part("Category") category: RequestBody,
         @Part images: List<MultipartBody.Part>
     ): Response<JsonObject>
+
+    @Multipart
+    @POST("conversation/{conversationId}/file")
+    fun uploadFile(
+        @Path("conversationId") conversationId: String,
+        @Part file: MultipartBody.Part
+    ): Call<FileUploadResponse>
+
+    @POST("conversation")
+    suspend fun createConversation(
+        @Body request: CreateConversationRequest
+    ): Response<Conversation>
 
     // ================== PATCH
     @Multipart

@@ -1,4 +1,4 @@
-package com.example.projeto
+package com.example.projeto.Products
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.Product
-import androidx.navigation.fragment.findNavController
 import com.example.projeto.databinding.FragmentFifthBinding
 import kotlinx.coroutines.launch
 

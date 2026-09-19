@@ -1,9 +1,10 @@
-package com.example.projeto
+package com.example.projeto.Products
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.projeto.R
 import com.example.projeto.data.Product
 import com.example.projeto.databinding.ItemProductCardBinding
 

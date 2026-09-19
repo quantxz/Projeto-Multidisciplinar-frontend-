@@ -1,5 +1,6 @@
-package com.example.projeto
+package com.example.projeto.Products
 
+import android.R
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -90,12 +91,12 @@ class FourthFragment : Fragment() {
 
         val adapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_spinner_item,
+            R.layout.simple_spinner_item,
             nomesCategorias
         )
 
         adapter.setDropDownViewResource(
-            android.R.layout.simple_spinner_dropdown_item
+            R.layout.simple_spinner_dropdown_item
         )
 
         binding.spinnerCategoria.adapter = adapter
@@ -282,14 +283,8 @@ class FourthFragment : Fragment() {
 
                     if (response.isSuccessful) {
 
-                        Toast.makeText(
-                            requireContext(),
-                            "Anúncio publicado com sucesso!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-
                         findNavController().navigate(
-                            R.id.action_FourthFragment_to_SixthFragment
+                            com.example.projeto.R.id.action_FourthFragment_to_SixthFragment
                         )
 
                     } else {

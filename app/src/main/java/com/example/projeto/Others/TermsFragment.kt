@@ -1,10 +1,11 @@
-package com.example.projeto
+package com.example.projeto.Others
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.projeto.R
 
 class TermsFragment : Fragment() {
 

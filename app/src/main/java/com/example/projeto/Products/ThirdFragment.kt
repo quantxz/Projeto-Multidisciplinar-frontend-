@@ -1,4 +1,4 @@
-package com.example.projeto
+package com.example.projeto.Products
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.databinding.FragmentThirdBinding
 import kotlinx.coroutines.launch
@@ -79,7 +80,7 @@ class ThirdFragment : Fragment() {
         // MATCHES
         binding.btnMatches.setOnClickListener {
             findNavController().navigate(
-                R.id.action_ThirdFragment_to_SeventhFragment
+                R.id.action_ThirdFragment_to_MessagesFragment
             )
         }
     }

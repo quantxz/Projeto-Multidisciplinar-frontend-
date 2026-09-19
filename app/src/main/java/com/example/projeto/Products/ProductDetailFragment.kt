@@ -1,4 +1,4 @@
-package com.example.projeto
+package com.example.projeto.Products
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,11 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projeto.data.Product
 import com.example.projeto.databinding.FragmentProductDetailBinding
+import androidx.lifecycle.lifecycleScope
+import com.example.projeto.R
+import com.example.projeto.api.RetrofitClient
+import com.example.projeto.data.CreateConversationRequest
+import kotlinx.coroutines.launch
 
 class ProductDetailFragment : Fragment() {
 
@@ -58,12 +63,59 @@ class ProductDetailFragment : Fragment() {
         }
 
         binding.btnTenhoInteresse.setOnClickListener {
+            iniciarConversa(produto)
+            findNavController().navigate(
+                R.id.action_ProductDetailFragment_to_MessagesFragment
+            )
+        }
+    }
 
-            Toast.makeText(
-                requireContext(),
-                "Você demonstrou interesse em ${produto.title}",
-                Toast.LENGTH_SHORT
-            ).show()
+    private fun iniciarConversa(produto: Product) {
+
+        viewLifecycleOwner.lifecycleScope.launch {
+
+            try {
+
+                val response = RetrofitClient.api.createConversation(
+                    CreateConversationRequest(
+                        userId = produto.authorId
+                    )
+                )
+
+                if (response.isSuccessful) {
+
+                    val conversa = response.body()
+
+                    if (conversa == null) {
+                        Toast.makeText(
+                            requireContext(),
+                            "Não foi possível iniciar a conversa.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        return@launch
+                    }
+
+                    // Aqui abriremos a tela da conversa
+                    // passando o ID dela.
+
+                } else {
+
+                    Toast.makeText(
+                        requireContext(),
+                        "Erro ao iniciar conversa: ${response.code()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Erro: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 

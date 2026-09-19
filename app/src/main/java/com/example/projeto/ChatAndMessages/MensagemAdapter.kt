@@ -1,4 +1,4 @@
-package com.example.projeto
+package com.example.projeto.ChatAndMessages
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projeto.data.Mensagem
+import com.example.projeto.R
 
 class MensagemAdapter(
     private val mensagens: List<Mensagem>
@@ -61,6 +63,7 @@ class MensagemAdapter(
 
             val bundle = Bundle().apply {
                 putString("nomeUsuario", mensagem.nome)
+                putString("conversationId", mensagem.idConversa)
             }
 
             holder.itemView.findNavController().navigate(

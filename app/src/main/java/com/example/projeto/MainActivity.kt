@@ -60,30 +60,6 @@ class MainActivity : AppCompatActivity() {
             navController,
             appBarConfiguration
         )
-
-        // BOTÃO DE MENSAGENS
-        binding.fab.setOnClickListener {
-            navController.navigate(
-                R.id.MessagesFragment
-            )
-        }
-
-        // Controla quando o botão de mensagens aparece
-        navController.addOnDestinationChangedListener {
-                _, destination, _ ->
-
-            if (
-                destination.id == R.id.FirstFragment ||
-                destination.id == R.id.SecondFragment
-            ) {
-
-                binding.fab.hide()
-
-            } else {
-
-                binding.fab.show()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(
