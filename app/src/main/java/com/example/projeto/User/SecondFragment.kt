@@ -47,6 +47,27 @@ class SecondFragment : Fragment() {
             val nome = binding.edtNome.text.toString().trim()
             val email = binding.edtEmailCadastro.text.toString().trim()
             val senha = binding.edtSenhaCadastro.text.toString().trim()
+            if (nome.length < 1) {
+                binding.edtNome.error = "O  nome deve ter pelo menos 1 caracter"
+                return@setOnClickListener
+            }
+
+            if (email.length < 5) {
+                binding.edtEmailCadastro.error = "O e-mail deve ter pelo menos 5 caracteres"
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.edtEmailCadastro.error = "Digite um e-mail válido"
+                return@setOnClickListener
+            }
+
+            val erroSenha = validarSenha(senha)
+
+            if (erroSenha != null) {
+                binding.edtSenhaCadastro.error = erroSenha
+                return@setOnClickListener
+            }
 
             if (nome.isEmpty()) {
 
@@ -148,6 +169,31 @@ class SecondFragment : Fragment() {
                 R.id.action_SecondFragment_to_FirstFragment
             )
         }
+    }
+
+    private fun validarSenha(senha: String): String? {
+
+        if (senha.length < 8) {
+            return "A senha deve ter pelo menos 8 caracteres"
+        }
+
+        if (!senha.any { it.isUpperCase() }) {
+            return "A senha deve conter uma letra maiúscula"
+        }
+
+        if (!senha.any { it.isLowerCase() }) {
+            return "A senha deve conter uma letra minúscula"
+        }
+
+        if (!senha.any { it.isDigit() }) {
+            return "A senha deve conter um número"
+        }
+
+        if (!senha.any { !it.isLetterOrDigit() }) {
+            return "A senha deve conter um caractere especial"
+        }
+
+        return null
     }
 
     override fun onDestroyView() {

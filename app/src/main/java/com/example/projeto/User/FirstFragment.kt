@@ -52,6 +52,28 @@ class FirstFragment : Fragment() {
             val email = binding.edtEmail.text.toString().trim()
             val senha = binding.edtSenha.text.toString()
 
+            if (email.length < 5) {
+                binding.edtEmail.error = "O e-mail deve ter pelo menos 5 caracteres"
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.edtEmail.error = "Digite um e-mail válido"
+                return@setOnClickListener
+            }
+
+            if (senha.length < 7) {
+                binding.edtSenha.error = "A senha deve ter pelo menos 7 caracteres"
+                return@setOnClickListener
+            }
+
+            if (!senhaValida(senha)) {
+                binding.edtSenha.error =
+                    "A senha deve ter pelo menos 8 caracteres, " +
+                            "uma letra maiúscula, uma minúscula, um número e um caractere especial"
+                return@setOnClickListener
+            }
+
             if (email.isEmpty() || senha.isEmpty()) {
 
                 Toast.makeText(
@@ -74,6 +96,18 @@ class FirstFragment : Fragment() {
         }
     }
 
+    private fun senhaValida(senha: String): Boolean {
+        val temMaiuscula = senha.any { it.isUpperCase() }
+        val temMinuscula = senha.any { it.isLowerCase() }
+        val temNumero = senha.any { it.isDigit() }
+        val temEspecial = senha.any { !it.isLetterOrDigit() }
+
+        return senha.length >= 8 &&
+                temMaiuscula &&
+                temMinuscula &&
+                temNumero &&
+                temEspecial
+    }
     private fun fazerLogin(
         email: String,
         senha: String
