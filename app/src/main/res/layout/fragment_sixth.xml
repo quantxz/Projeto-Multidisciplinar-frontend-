@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="28dp"
-    android:background="#E8F3EC">
+    android:background="#E8F3EC"
+    android:paddingTop="50dp">
+    <!-- BOTÃO VOLTAR -->
+
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Voltar"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back" />
+
+    <!-- TÍTULO -->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:text="Meus materiais 📦"
         android:textColor="#2E7D32"
         android:textSize="28sp"
         android:textStyle="bold"/>
+
+    <!-- MENSAGEM -->
 
     <TextView
         android:id="@+id/tvMeusMateriais"
@@ -25,6 +40,8 @@
         android:text="Você ainda não possui materiais cadastrados."
         android:textColor="#333333"
         android:textSize="16sp"/>
+
+    <!-- LISTA -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMateriais"

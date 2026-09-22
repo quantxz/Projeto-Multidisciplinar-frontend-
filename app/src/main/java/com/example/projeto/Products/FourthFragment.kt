@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.databinding.FragmentFourthBinding
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -66,6 +68,10 @@ class FourthFragment : Fragment() {
     ) {
 
         super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<ImageButton>(com.example.projeto.R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         // ==========================================
         // CATEGORIAS

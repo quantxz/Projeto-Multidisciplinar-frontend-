@@ -3,152 +3,189 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F3EC">
-
-    <LinearLayout
+    android:background="#E8F3EC"
+    android:fillViewport="true"
+    android:paddingTop="25dp">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="28dp">
+        android:layout_height="match_parent">
 
-        <TextView
+        <!-- BOTÃO VOLTAR -->
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <!-- CONTEÚDO -->
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Publicar material ♻️"
-            android:textColor="#2E7D32"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:orientation="vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="30dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Informe os dados do material que você possui."
-            android:textColor="#666666"
-            android:textSize="16sp"/>
+            <!-- TÍTULO -->
 
-        <EditText
-            android:id="@+id/edtMaterial"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="28dp"
-            android:background="#FFFFFF"
-            android:hint="Nome do material"
-            android:textColor="#222222"
-            android:textColorHint="#777777"
-            android:textSize="16sp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="Publicar material ♻️"
+                android:textColor="#2E7D32"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
-        <!-- CATEGORIA -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Informe os dados do material que você possui."
+                android:textColor="#666666"
+                android:textSize="16sp" />
 
-        <Spinner
-            android:id="@+id/spinnerCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"/>
+            <!-- MATERIAL -->
 
-        <!-- FOTO -->
+            <EditText
+                android:id="@+id/edtMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="28dp"
+                android:background="#FFFFFF"
+                android:hint="Nome do material"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:text="Foto do material"
-            android:textColor="#222222"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            <!-- CATEGORIA -->
 
-        <ImageView
-            android:id="@+id/imgMaterial"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
-            android:background="#FFFFFF"
-            android:contentDescription="Foto do material"
-            android:scaleType="centerInside"
-            android:src="@android:drawable/ic_menu_camera"/>
+            <Spinner
+                android:id="@+id/spinnerCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
 
-        <Button
-            android:id="@+id/btnSelecionarFoto"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="10dp"
-            android:text="📷  SELECIONAR FOTO"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
+            <!-- FOTO -->
 
-        <!-- DESCRIÇÃO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Foto do material"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edtDescricaoMaterial"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="18dp"
-            android:background="#FFFFFF"
-            android:gravity="top"
-            android:hint="Descrição"
-            android:inputType="textMultiLine"
-            android:textColor="#222222"
-            android:textColorHint="#777777"
-            android:textSize="16sp"
-            android:padding="16dp"/>
+            <ImageView
+                android:id="@+id/imgMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:contentDescription="Foto do material"
+                android:scaleType="centerInside"
+                android:src="@android:drawable/ic_menu_camera" />
 
-        <EditText
-            android:id="@+id/edtQuantidade"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:hint="Quantidade"
-            android:textColor="#222222"
-            android:textColorHint="#777777"
-            android:textSize="16sp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:inputType="number"/>
+            <Button
+                android:id="@+id/btnSelecionarFoto"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:text="📷  SELECIONAR FOTO"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edtEstado"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:hint="Estado do material"
-            android:textColor="#222222"
-            android:textColorHint="#777777"
-            android:textSize="16sp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"/>
+            <!-- DESCRIÇÃO -->
 
-        <EditText
-            android:id="@+id/edtLocalizacaoMaterial"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:hint="Localização aproximada"
-            android:textColor="#222222"
-            android:textColorHint="#777777"
-            android:textSize="16sp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"/>
+            <EditText
+                android:id="@+id/edtDescricaoMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="18dp"
+                android:background="#FFFFFF"
+                android:gravity="top"
+                android:hint="Descrição"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btnPublicar"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginBottom="30dp"
-            android:text="PUBLICAR MATERIAL"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
+            <!-- QUANTIDADE -->
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/edtQuantidade"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:hint="Quantidade"
+                android:inputType="number"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:textSize="16sp" />
+
+            <!-- ESTADO -->
+
+            <EditText
+                android:id="@+id/edtEstado"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:hint="Estado do material"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:textSize="16sp" />
+
+            <!-- LOCALIZAÇÃO -->
+
+            <EditText
+                android:id="@+id/edtLocalizacaoMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:hint="Localização aproximada"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:textSize="16sp" />
+
+            <!-- PUBLICAR -->
+
+            <Button
+                android:id="@+id/btnPublicar"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="30dp"
+                android:text="PUBLICAR MATERIAL"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </ScrollView>
-

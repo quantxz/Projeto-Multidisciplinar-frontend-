@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -13,6 +14,7 @@ import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.TokenManager
 import com.example.projeto.databinding.FragmentFirstBinding
 import com.example.projeto.model.LoginRequest
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class FirstFragment : Fragment() {
@@ -46,6 +48,9 @@ class FirstFragment : Fragment() {
 
         RetrofitClient.initialize(tokenManager)
 
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         binding.btnEntrar.setOnClickListener {
 

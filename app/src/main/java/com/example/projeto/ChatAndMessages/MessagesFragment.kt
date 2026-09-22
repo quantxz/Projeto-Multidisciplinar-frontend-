@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.ConversationDto
 import com.example.projeto.data.Mensagem
 import com.example.projeto.databinding.FragmentMessagesBinding
+import com.example.projeto.voltarParaPerfil
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,6 +44,10 @@ class MessagesFragment : Fragment() {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<ImageButton>(com.example.projeto.R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         binding.recyclerMensagens.layoutManager =
             LinearLayoutManager(requireContext())

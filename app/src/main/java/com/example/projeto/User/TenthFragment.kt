@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -16,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -93,6 +95,9 @@ class TenthFragment : Fragment() {
         val edtDescricaoPerfil =
             view.findViewById<EditText>(R.id.edtDescricaoPerfil)
 
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         // =========================
         // CARREGAR PERFIL

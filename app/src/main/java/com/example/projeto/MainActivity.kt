@@ -6,18 +6,14 @@ import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.findNavController
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.projeto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,43 +24,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
+        // Modo tela cheia / imersivo
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
-            val systemBars =
-                insets.getInsets(WindowInsetsCompat.Type.systemBars())
+        WindowInsetsControllerCompat(
+            window,
+            window.decorView
+        ).apply {
 
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
+            // Esconde barra superior e inferior
+            hide(
+                WindowInsetsCompat.Type.statusBars() or
+                        WindowInsetsCompat.Type.navigationBars()
             )
 
-            insets
+            // Permite mostrar temporariamente com gesto
+            systemBarsBehavior =
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
-
-        setSupportActionBar(binding.toolbar)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(
                 R.id.nav_host_fragment_content_main
             ) as NavHostFragment
 
-        val navController =
-            navHostFragment.navController
-
-        appBarConfiguration =
-            AppBarConfiguration(navController.graph)
-
-        setupActionBarWithNavController(
-            navController,
-            appBarConfiguration
-        )
+        val navController = navHostFragment.navController
     }
 
-    override fun onCreateOptionsMenu(
-        menu: Menu
-    ): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
         menuInflater.inflate(
             R.menu.menu_main,
@@ -76,21 +63,16 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(
-        item: MenuItem
-    ): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {
 
             R.id.action_theme -> {
-
                 trocarTema()
-
                 true
             }
 
-            else ->
-                super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -113,9 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun atualizarTextoTema(
-        menu: Menu
-    ) {
+    private fun atualizarTextoTema(menu: Menu) {
 
         val itemTema =
             menu.findItem(R.id.action_theme)
@@ -131,17 +111,5 @@ class MainActivity : AppCompatActivity() {
 
             itemTema.title = "🌙 Tema escuro"
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-
-        val navController =
-            findNavController(
-                R.id.nav_host_fragment_content_main
-            )
-
-        return navController.navigateUp(
-            appBarConfiguration
-        ) || super.onSupportNavigateUp()
     }
 }

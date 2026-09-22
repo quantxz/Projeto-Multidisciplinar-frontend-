@@ -5,9 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F2">
+    android:background="#F5F7F2"
+    android:paddingTop="25dp">
+    <!-- CABEÇALHO -->
 
-    <!-- Cabeçalho -->
     <LinearLayout
         android:id="@+id/layoutCabecalhoChat"
         android:layout_width="0dp"
@@ -16,13 +17,25 @@
         android:elevation="3dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
+        android:paddingStart="8dp"
         android:paddingEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Foto -->
+        <!-- SETA VOLTAR -->
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <!-- FOTO -->
+
         <ImageView
             android:id="@+id/imgUsuarioChat"
             android:layout_width="48dp"
@@ -32,7 +45,8 @@
             android:padding="10dp"
             android:src="@android:drawable/ic_menu_myplaces" />
 
-        <!-- Nome e status -->
+        <!-- NOME E STATUS -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -67,7 +81,8 @@
 
     </LinearLayout>
 
-    <!-- Área das mensagens -->
+    <!-- ÁREA DAS MENSAGENS -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerChat"
         android:layout_width="0dp"
@@ -80,7 +95,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutCabecalhoChat" />
 
-    <!-- Barra inferior -->
+    <!-- BARRA INFERIOR -->
+
     <LinearLayout
         android:id="@+id/layoutEnviarMensagem"
         android:layout_width="0dp"
@@ -105,7 +121,7 @@
             android:contentDescription="Anexar arquivo"
             android:padding="10dp"
             android:src="@android:drawable/ic_menu_add"
-            android:tint="#2E7D32" />
+            app:tint="#2E7D32" />
 
         <EditText
             android:id="@+id/edtMensagem"

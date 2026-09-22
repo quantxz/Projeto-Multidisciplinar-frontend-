@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -13,6 +14,7 @@ import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.Product
 import com.example.projeto.databinding.FragmentFifthBinding
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class FifthFragment : Fragment() {
@@ -44,6 +46,10 @@ class FifthFragment : Fragment() {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         adapter = ProductCardAdapter(
             emptyList()

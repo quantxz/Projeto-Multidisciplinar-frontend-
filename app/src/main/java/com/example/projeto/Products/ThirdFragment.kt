@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.databinding.FragmentThirdBinding
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class ThirdFragment : Fragment() {
@@ -41,7 +43,9 @@ class ThirdFragment : Fragment() {
 
         // Carrega os dados do usuário
         carregarPerfil()
-
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
         // CONFIGURAÇÕES
         binding.btnConfiguracoes.setOnClickListener {
             findNavController().navigate(

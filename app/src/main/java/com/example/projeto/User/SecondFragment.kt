@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +15,7 @@ import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.TokenManager
 import com.example.projeto.databinding.FragmentSecondBinding
 import com.example.projeto.model.RegisterRequest
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class SecondFragment : Fragment() {
@@ -42,6 +44,10 @@ class SecondFragment : Fragment() {
 
         RetrofitClient.initialize(tokenManager)
 
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
+
         binding.btnCadastrar.setOnClickListener {
 
             val nome = binding.edtNome.text.toString().trim()
@@ -68,6 +74,8 @@ class SecondFragment : Fragment() {
                 binding.edtSenhaCadastro.error = erroSenha
                 return@setOnClickListener
             }
+
+
 
             if (nome.isEmpty()) {
 

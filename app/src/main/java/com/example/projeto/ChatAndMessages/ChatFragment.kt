@@ -21,6 +21,7 @@ import com.example.projeto.data.ChatMensagem
 import com.example.projeto.data.FileUploadResponse
 import com.example.projeto.data.LastMessageDto
 import com.example.projeto.data.TokenManager
+import com.example.projeto.voltarParaPerfil
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,6 +68,10 @@ class ChatFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         tokenManager = TokenManager(requireContext())
         meuUserId = tokenManager.getUserId()
+
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         println("Meu User ID: $meuUserId")
         recyclerChat = view.findViewById(R.id.recyclerChat)

@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.databinding.FragmentSixthBinding
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class SixthFragment : Fragment() {
@@ -41,6 +44,10 @@ class SixthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         productAdapter = ProductAdapter()
+
+        view.findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            voltarParaPerfil()
+        }
 
         binding.recyclerMateriais.apply {
             layoutManager = LinearLayoutManager(requireContext())

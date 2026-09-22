@@ -5,160 +5,174 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F7F2"
-    android:fillViewport="true">
-
-    <LinearLayout
+    android:fillViewport="true"
+    android:paddingTop="25dp">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="24dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="32dp">
+        android:layout_height="wrap_content">
 
-        <!-- CABEÇALHO -->
+        <!-- SETA VOLTAR -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Configurações"
-            android:textColor="#222222"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Gerencie suas preferências"
-            android:textColor="#718078"
-            android:textSize="15sp" />
-
-        <!-- PREFERÊNCIAS -->
+        <!-- CONTEÚDO -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:background="@drawable/bg_card"
-            android:elevation="2dp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:paddingStart="24dp"
+            android:paddingTop="80dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <!-- CABEÇALHO -->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="8dp"
-                android:text="Preferências"
-                android:textColor="#245B32"
-                android:textSize="18sp"
+                android:text="Configurações"
+                android:textColor="#222222"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <!-- NOTIFICAÇÕES -->
-
-            <Button
-                android:id="@+id/btnNotificacoes"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="#FFFFFF"
-                android:gravity="start|center_vertical"
-                android:text="🔔  Notificações"
-                android:textAllCaps="false"
-                android:textColor="#333333"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Gerencie suas preferências"
+                android:textColor="#718078"
                 android:textSize="15sp" />
 
-            <!-- PRIVACIDADE -->
+            <!-- PREFERÊNCIAS -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/bg_card"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:text="Preferências"
+                    android:textColor="#245B32"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnNotificacoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="start|center_vertical"
+                    android:text="🔔  Notificações"
+                    android:textAllCaps="false"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnPrivacidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="start|center_vertical"
+                    android:text="🔒  Privacidade"
+                    android:textAllCaps="false"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnAjuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="start|center_vertical"
+                    android:text="❓  Ajuda"
+                    android:textAllCaps="false"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnTermos"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="start|center_vertical"
+                    android:text="📄  Termos de uso"
+                    android:textAllCaps="false"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <!-- NAVEGAÇÃO -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Navegação"
+                android:textColor="#222222"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnPrivacidade"
+                android:id="@+id/btnVoltarPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="#FFFFFF"
-                android:gravity="start|center_vertical"
-                android:text="🔒  Privacidade"
+                android:layout_height="58dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="#DDEBDD"
+                android:text="←  Voltar ao perfil"
                 android:textAllCaps="false"
-                android:textColor="#333333"
-                android:textSize="15sp" />
+                android:textColor="#2E7D32"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-            <!-- AJUDA -->
+            <!-- CONTA -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Conta"
+                android:textColor="#222222"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnAjuda"
+                android:id="@+id/btnSair"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="#FFFFFF"
+                android:layout_height="58dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#F3DEDC"
                 android:gravity="start|center_vertical"
-                android:text="❓  Ajuda"
+                android:text="🚪  Sair da conta"
                 android:textAllCaps="false"
-                android:textColor="#333333"
-                android:textSize="15sp" />
-
-            <!-- TERMOS -->
-
-            <Button
-                android:id="@+id/btnTermos"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="#FFFFFF"
-                android:gravity="start|center_vertical"
-                android:text="📄  Termos de uso"
-                android:textAllCaps="false"
-                android:textColor="#333333"
-                android:textSize="15sp" />
+                android:textColor="#B3261E"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <!-- NAVEGAÇÃO -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Navegação"
-            android:textColor="#222222"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnVoltarPerfil"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="14dp"
-            android:backgroundTint="#DDEBDD"
-            android:text="←  Voltar ao perfil"
-            android:textAllCaps="false"
-            android:textColor="#2E7D32"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <!-- CONTA -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Conta"
-            android:textColor="#222222"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnSair"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="#F3DEDC"
-            android:gravity="start|center_vertical"
-            android:text="🚪  Sair da conta"
-            android:textAllCaps="false"
-            android:textColor="#B3261E"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    </FrameLayout>
 
 </ScrollView>

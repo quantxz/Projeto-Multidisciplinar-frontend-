@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -14,6 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.projeto.R
 import com.example.projeto.api.RetrofitClient
 import com.example.projeto.data.CreateConversationRequest
+import com.example.projeto.voltarParaPerfil
 import kotlinx.coroutines.launch
 
 class ProductDetailFragment : Fragment() {

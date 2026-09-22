@@ -4,127 +4,152 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F3EC">
-
-    <LinearLayout
+    android:background="#E8F3EC"
+    android:fillViewport="true"
+    android:paddingTop="25dp">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Privacidade"
-            android:textColor="#222222"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+        <!-- SETA VOLTAR -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Controle como suas informações aparecem no ReMatch"
-            android:textColor="#666666"
-            android:textSize="15sp" />
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back" />
 
-        <!-- VISIBILIDADE DO PERFIL -->
+        <!-- CONTEÚDO -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:background="#FFFFFF"
-            android:elevation="2dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="18dp">
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="80dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacidade"
+                android:textColor="#222222"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Controle como suas informações aparecem no ReMatch"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <!-- VISIBILIDADE DO PERFIL -->
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginTop="35dp"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
 
-                <TextView
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👤  Perfil visível"
+                        android:textColor="#222222"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Permita que outros usuários visualizem seu perfil."
+                        android:textColor="#777777"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchPerfilVisivel"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="👤  Perfil visível"
-                    android:textColor="#222222"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Permita que outros usuários visualizem seu perfil."
-                    android:textColor="#777777"
-                    android:textSize="13sp" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-            <Switch
-                android:id="@+id/switchPerfilVisivel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <!-- LOCALIZAÇÃO -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:elevation="2dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="18dp">
+            <!-- LOCALIZAÇÃO -->
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
 
-                <TextView
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍  Mostrar localização"
+                        android:textColor="#222222"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Permita que sua localização cadastrada apareça para outros usuários."
+                        android:textColor="#777777"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchLocalizacao"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📍  Mostrar localização"
-                    android:textColor="#222222"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Permita que sua localização cadastrada apareça para outros usuários."
-                    android:textColor="#777777"
-                    android:textSize="13sp" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-            <Switch
-                android:id="@+id/switchLocalizacao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <!-- INFORMAÇÃO -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="🔒 Suas preferências de privacidade ficam sob seu controle."
+                android:textColor="#666666"
+                android:textSize="13sp" />
 
         </LinearLayout>
 
-        <!-- INFORMAÇÃO -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="🔒 Suas preferências de privacidade ficam sob seu controle."
-            android:textColor="#666666"
-            android:textSize="13sp" />
-
-    </LinearLayout>
+    </FrameLayout>
 
 </ScrollView>
