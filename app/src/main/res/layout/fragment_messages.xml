@@ -5,8 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F2"
+    android:background="#0D1117"
     android:paddingTop="25dp">
+
     <!-- SETA VOLTAR -->
 
     <ImageButton
@@ -15,10 +16,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/bg_button_transparent"
         android:contentDescription="Voltar"
         android:padding="8dp"
         android:src="@drawable/ic_arrow_back"
+        android:tint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +34,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="24dp"
         android:text="Mensagens"
-        android:textColor="#222222"
+        android:textColor="#2E7D32"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,24 +51,42 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
         android:text="Suas conversas"
-        android:textColor="#777777"
+        android:textColor="#A8B3AD"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTituloMensagens" />
 
-    <!-- LISTA DE CONVERSAS -->
+    <!-- ÁREA DAS CONVERSAS -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMensagens"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="20dp"
-        android:clipToPadding="false"
-        android:paddingBottom="20dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:cardBackgroundColor="#0FFFFFFF"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="8dp"
+        app:strokeColor="#14FFFFFF"
+        app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtituloMensagens" />
+        app:layout_constraintTop_toBottomOf="@id/tvSubtituloMensagens">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMensagens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="20dp"
+            android:scrollbars="none" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="28dp"
-    android:background="#E8F3EC"
-    android:paddingTop="25dp">
+    android:paddingTop="25dp"
+    android:background="#0D1117">
 
     <!-- BOTÃO VOLTAR -->
 
@@ -15,10 +17,11 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="start"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/bg_button_transparent"
         android:contentDescription="Voltar"
         android:padding="8dp"
-        android:src="@drawable/ic_arrow_back" />
+        android:src="@drawable/ic_arrow_back"
+        android:tint="#FFFFFF" />
 
     <!-- TÍTULO -->
 
@@ -31,30 +34,87 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
-    <!-- BUSCA -->
-
-    <EditText
-        android:id="@+id/edtBusca"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginTop="25dp"
-        android:background="#FFFFFF"
-        android:hint="O que você procura?"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="#222222"
-        android:textColorHint="#777777"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Encontre materiais disponíveis para troca."
+        android:textColor="#A8B3AD"
+        android:textSize="14sp" />
 
-    <!-- BOTÃO BUSCAR -->
+    <!-- ÁREA DE BUSCA -->
 
-    <Button
-        android:id="@+id/btnBuscar"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:text="BUSCAR"
-        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        app:cardBackgroundColor="#0FFFFFFF"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="8dp"
+        app:strokeColor="#14FFFFFF"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- CAMPO DE BUSCA -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="O que você procura?"
+                app:boxBackgroundColor="#08FFFFFF"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusBottomEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp"
+                app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusTopStart="14dp"
+                app:boxStrokeColor="#2E7D32"
+                app:hintTextColor="#7F8A84">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtBusca"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#7F8A84"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BOTÃO BUSCAR -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="12dp"
+                android:text="BUSCAR"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#2E7D32"
+                app:cornerRadius="14dp"
+                app:elevation="4dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- TÍTULO DA LISTA -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Materiais disponíveis"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <!-- LISTA -->
@@ -63,7 +123,10 @@
         android:id="@+id/recyclerProdutos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1" />
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+        android:scrollbars="none" />
 
 </LinearLayout>

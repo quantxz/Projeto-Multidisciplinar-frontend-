@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F2"
+    android:background="#0D1117"
     android:fillViewport="true"
+    android:scrollbars="none"
     android:paddingTop="25dp">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,10 +23,11 @@
             android:layout_gravity="top|start"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_button_transparent"
             android:contentDescription="Voltar"
             android:padding="8dp"
-            android:src="@drawable/ic_arrow_back" />
+            android:src="@drawable/ic_arrow_back"
+            android:tint="#FFFFFF" />
 
         <!-- CONTEÚDO -->
 
@@ -42,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Editar perfil"
-                android:textColor="#245B32"
+                android:textColor="#2E7D32"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -51,127 +55,201 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:text="Mantenha suas informações atualizadas"
-                android:textColor="#718078"
+                android:textColor="#A8B3AD"
                 android:textSize="15sp" />
 
             <!-- FOTO -->
 
-            <FrameLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="28dp">
+                android:layout_marginTop="28dp"
+                app:cardBackgroundColor="#142E7D32"
+                app:cardCornerRadius="75dp"
+                app:cardElevation="8dp"
+                app:strokeColor="#2E7D32"
+                app:strokeWidth="2dp">
 
                 <ImageView
                     android:id="@+id/imgFotoPerfil"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/bg_foto_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:contentDescription="Foto de perfil"
                     android:padding="3dp"
                     android:scaleType="centerCrop" />
 
-            </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <Button
+            <!-- ALTERAR FOTO -->
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSelecionarFotoPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp"
-                android:backgroundTint="#DDEBDD"
                 android:text="ALTERAR FOTO"
                 android:textColor="#2E7D32"
                 android:textSize="13sp"
                 android:textStyle="bold"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                app:backgroundTint="#142E7D32"
+                app:cornerRadius="12dp"
+                app:strokeColor="#2E7D32"
+                app:strokeWidth="1dp" />
 
-            <!-- INFORMAÇÕES -->
+            <!-- FORMULÁRIO -->
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Informações pessoais"
-                android:textColor="#245B32"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                app:cardBackgroundColor="#0FFFFFFF"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="8dp"
+                app:strokeColor="#14FFFFFF"
+                app:strokeWidth="1dp">
 
-            <!-- NOME -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
-            <EditText
-                android:id="@+id/edtNomePerfil"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/bg_edittext"
-                android:hint="Nome"
-                android:inputType="textPersonName"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:textColor="#333333"
-                android:textColorHint="#8A938D"
-                android:textSize="16sp" />
+                    <!-- TÍTULO DA SEÇÃO -->
 
-            <!-- LOCALIZAÇÃO -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Informações pessoais"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtLocalizacaoPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_edittext"
-                android:hint="Localização"
-                android:inputType="text"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:textColor="#333333"
-                android:textColorHint="#8A938D"
-                android:textSize="16sp" />
+                    <!-- NOME -->
 
-            <!-- BIO -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Nome"
+                        app:boxBackgroundColor="#08FFFFFF"
+                        app:boxBackgroundMode="filled"
+                        app:boxCornerRadiusBottomEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp"
+                        app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusTopStart="14dp"
+                        app:boxStrokeColor="#2E7D32"
+                        app:hintTextColor="#7F8A84">
 
-            <EditText
-                android:id="@+id/edtDescricaoPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_edittext"
-                android:gravity="top"
-                android:hint="Fale um pouco sobre você"
-                android:inputType="textMultiLine|textCapSentences"
-                android:padding="18dp"
-                android:textColor="#333333"
-                android:textColorHint="#8A938D"
-                android:textSize="16sp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtNomePerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:inputType="textPersonName"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#7F8A84"
+                            android:textSize="16sp" />
 
-            <!-- BOTÃO SALVAR -->
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btnSalvarPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="26dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Salvar alterações"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
+                    <!-- LOCALIZAÇÃO -->
 
-            <!-- BOTÃO VOLTAR -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Localização"
+                        app:boxBackgroundColor="#08FFFFFF"
+                        app:boxBackgroundMode="filled"
+                        app:boxCornerRadiusBottomEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp"
+                        app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusTopStart="14dp"
+                        app:boxStrokeColor="#2E7D32"
+                        app:hintTextColor="#7F8A84">
 
-            <Button
-                android:id="@+id/btnVoltarPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#E2E9E3"
-                android:text="Voltar"
-                android:textColor="#496050"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtLocalizacaoPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:inputType="text"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#7F8A84"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- BIO -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Fale um pouco sobre você"
+                        app:boxBackgroundColor="#08FFFFFF"
+                        app:boxBackgroundMode="filled"
+                        app:boxCornerRadiusBottomEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp"
+                        app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusTopStart="14dp"
+                        app:boxStrokeColor="#2E7D32"
+                        app:hintTextColor="#7F8A84">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtDescricaoPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:gravity="top"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:padding="14dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#7F8A84"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- SALVAR -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSalvarPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_marginTop="22dp"
+                        android:text="Salvar alterações"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        app:backgroundTint="#2E7D32"
+                        app:cornerRadius="14dp"
+                        app:elevation="4dp" />
+
+                    <!-- VOLTAR -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVoltarPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Voltar"
+                        android:textColor="#A8B3AD"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        app:backgroundTint="#08FFFFFF"
+                        app:cornerRadius="14dp"
+                        app:strokeColor="#14FFFFFF"
+                        app:strokeWidth="1dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

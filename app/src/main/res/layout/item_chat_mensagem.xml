@@ -1,58 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="6dp">
+    android:paddingStart="8dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="5dp">
 
-    <LinearLayout
+    <!-- BALÃO DA MENSAGEM -->
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/containerMensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
-
-        <ImageView
-            android:id="@+id/imgArquivo"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            android:visibility="gone"
-            android:contentDescription="Imagem enviada" />
-
-        <TextView
-            android:id="@+id/tvMensagemChat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp" />
+        android:layout_gravity="start"
+        app:cardBackgroundColor="#0FFFFFFF"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        app:strokeColor="#14FFFFFF"
+        app:strokeWidth="1dp">
 
         <LinearLayout
-            android:id="@+id/layoutArquivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:visibility="gone"
-            android:paddingTop="8dp">
+            android:minWidth="60dp"
+            android:maxWidth="300dp"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- IMAGEM ENVIADA -->
+
+            <ImageView
+                android:id="@+id/imgArquivo"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:contentDescription="Imagem enviada"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!-- TEXTO -->
 
             <TextView
-                android:id="@+id/tvNomeArquivo"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnBaixarArquivo"
+                android:id="@+id/tvMensagemChat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Baixar" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:lineSpacingExtra="2dp" />
+
+            <!-- ARQUIVO -->
+
+            <LinearLayout
+                android:id="@+id/layoutArquivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="4dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvNomeArquivo"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#A8B3AD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBaixarArquivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="Baixar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:backgroundTint="#142E7D32"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="#2E7D32"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

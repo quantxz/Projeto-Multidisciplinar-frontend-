@@ -1,49 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginBottom="6dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="#0FFFFFFF"
     app:cardCornerRadius="16dp"
-    app:cardElevation="2dp"
-    app:cardBackgroundColor="#FFFFFF">
+    app:cardElevation="4dp"
+    app:strokeColor="#14FFFFFF"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="16dp">
+        android:padding="14dp">
 
-        <!-- Foto da pessoa -->
-        <ImageView
-            android:id="@+id/imgFotoMensagem"
+        <!-- FOTO DA PESSOA -->
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="#E8F3EC"
-            android:contentDescription="Foto do usuário"
-            android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_myplaces" />
+            app:cardBackgroundColor="#142E7D32"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#2E7D32"
+            app:strokeWidth="1dp">
 
-        <!-- Informações da conversa -->
+            <ImageView
+                android:id="@+id/imgFotoMensagem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Foto do usuário"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:tint="#A8B3AD" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- INFORMAÇÕES DA CONVERSA -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="14dp">
+            android:layout_marginStart="14dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvNomeMensagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nome da pessoa"
-                android:textColor="#222222"
+                android:textColor="#FFFFFF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
@@ -52,24 +67,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:maxLines="1"
                 android:ellipsize="end"
+                android:maxLines="1"
                 android:text="Última mensagem..."
-                android:textColor="#666666"
+                android:textColor="#A8B3AD"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
-        <!-- Horário -->
+        <!-- HORÁRIO -->
+
         <TextView
             android:id="@+id/tvHorarioMensagem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:text="10:42"
-            android:textColor="#777777"
+            android:textColor="#7F8A84"
             android:textSize="12sp" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

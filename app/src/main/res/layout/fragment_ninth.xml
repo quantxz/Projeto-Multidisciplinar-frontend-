@@ -2,11 +2,14 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F2"
+    android:background="#0D1117"
     android:fillViewport="true"
-    android:paddingTop="25dp">
+    android:paddingTop="25dp"
+    android:scrollbars="none">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,10 +23,11 @@
             android:layout_gravity="top|start"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_button_transparent"
             android:contentDescription="Voltar"
             android:padding="8dp"
-            android:src="@drawable/ic_arrow_back" />
+            android:src="@drawable/ic_arrow_back"
+            android:tint="#FFFFFF" />
 
         <!-- CONTEÚDO -->
 
@@ -42,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Configurações"
-                android:textColor="#222222"
+                android:textColor="#2E7D32"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -51,77 +55,101 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Gerencie suas preferências"
-                android:textColor="#718078"
+                android:textColor="#A8B3AD"
                 android:textSize="15sp" />
 
             <!-- PREFERÊNCIAS -->
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
-                android:background="@drawable/bg_card"
-                android:elevation="2dp"
-                android:orientation="vertical"
-                android:padding="10dp">
+                app:cardBackgroundColor="#0FFFFFFF"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="8dp"
+                app:strokeColor="#14FFFFFF"
+                app:strokeWidth="1dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="8dp"
-                    android:text="Preferências"
-                    android:textColor="#245B32"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                <Button
-                    android:id="@+id/btnNotificacoes"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:gravity="start|center_vertical"
-                    android:text="🔔  Notificações"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="8dp"
+                        android:text="Preferências"
+                        android:textColor="#2E7D32"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnPrivacidade"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:gravity="start|center_vertical"
-                    android:text="🔒  Privacidade"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="15sp" />
+                    <!-- NOTIFICAÇÕES -->
 
-                <Button
-                    android:id="@+id/btnAjuda"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:gravity="start|center_vertical"
-                    android:text="❓  Ajuda"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="15sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNotificacoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="start|center_vertical"
+                        android:text="🔔  Notificações"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        app:backgroundTint="#08FFFFFF"
+                        app:cornerRadius="12dp" />
 
-                <Button
-                    android:id="@+id/btnTermos"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:gravity="start|center_vertical"
-                    android:text="📄  Termos de uso"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="15sp" />
+                    <!-- PRIVACIDADE -->
 
-            </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPrivacidade"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="🔒  Privacidade"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        app:backgroundTint="#08FFFFFF"
+                        app:cornerRadius="12dp" />
+
+                    <!-- AJUDA -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAjuda"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="❓  Ajuda"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        app:backgroundTint="#08FFFFFF"
+                        app:cornerRadius="12dp" />
+
+                    <!-- TERMOS -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTermos"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="📄  Termos de uso"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        app:backgroundTint="#08FFFFFF"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- NAVEGAÇÃO -->
 
@@ -130,21 +158,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="Navegação"
-                android:textColor="#222222"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnVoltarPerfil"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:backgroundTint="#DDEBDD"
-                android:text="←  Voltar ao perfil"
-                android:textAllCaps="false"
-                android:textColor="#2E7D32"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                app:cardBackgroundColor="#0FFFFFFF"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#14FFFFFF"
+                app:strokeWidth="1dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVoltarPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="←  Voltar ao perfil"
+                    android:textAllCaps="false"
+                    android:textColor="#2E7D32"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#142E7D32"
+                    app:cornerRadius="14dp" />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- CONTA -->
 
@@ -153,23 +193,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="Conta"
-                android:textColor="#222222"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnSair"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:layout_marginBottom="20dp"
-                android:backgroundTint="#F3DEDC"
-                android:gravity="start|center_vertical"
-                android:text="🚪  Sair da conta"
-                android:textAllCaps="false"
-                android:textColor="#B3261E"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                app:cardBackgroundColor="#0FFFFFFF"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#14FFFFFF"
+                app:strokeWidth="1dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSair"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:gravity="start|center_vertical"
+                    android:text="🚪  Sair da conta"
+                    android:textAllCaps="false"
+                    android:textColor="#FF8A80"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#14B3261E"
+                    app:cornerRadius="14dp" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
